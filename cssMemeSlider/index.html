@@ -4,11 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;900&family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>cssMemeSlider</title>
 </head>
 
 <body>
-
+    <main class="main">
+        <div class="slider">
+            <input type="radio" name="change" id="btn1" checked>
+            <input type="radio" name="change" id="btn2">
+            <input type="radio" name="change" id="btn3">
+            <input type="radio" name="change" id="btn4">
+            <div class="slider-inner">
+                <div class="slides">
+                    <img src="./img/slider_1.png" />
+                    <img src="./img/slider_2.png" />
+                    <img src="./img/slider_3.png" />
+                    <img src="./img/slider_4.png" />
+                </div>
+            </div>
+        </div>
+        <div class="text-switches-box">
+            <article class="texts">
+                <p class="texts__item">Ахахаха</p>
+                <p class="texts__item">С кем не бывает...</p>
+                <p class="texts__item">Слава Богу нет!</p>
+                <p class="texts__item">Ставь ⭐ в репозиторий, если у тебя также</p>
+            </article>
+            <nav class="switch">
+                <label class="btn1" for="btn1"></label>
+                <label for="btn2"></label>
+                <label for="btn3"></label>
+                <label for="btn4"></label>
+            </nav>
+        </div>
+    </main>
 </body>
 
 </html>
