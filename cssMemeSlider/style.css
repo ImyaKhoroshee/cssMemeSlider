@@ -1,3 +1,21 @@
+/* animation for text  */
+@keyframes tracking-in-expand-fwd-top {
+    0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-44rem) translateY(-31rem);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateZ(0) translateY(0);
+        opacity: 1;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,22 +25,48 @@
 
 body {
     font-family: 'Roboto Slab', serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    color: #acc7de;
+}
+
+.header {
+    background-color: rgb(40, 40, 40);
+    display: flex;
+    justify-content: center;
+    color: #acc7de;
+    font-size: large;
 }
 
 .main {
     background-color: rgb(40, 40, 40);
-    padding: 2rem;
+    padding: 0.5rem;
 }
 
+/* slider  */
 .slider {
-    margin: 2rem 2rem;
-    border: 1rem solid white;
-    border-radius: 1rem;
+    margin: 1rem 2rem 4rem 2rem;
 }
 
 .slider input[name="change"] {
     display: none;
+}
+
+.slider-inner {
+    overflow: hidden;
+    border: 1rem solid #acc7de;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    transition: all 1s;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .switch {
@@ -32,13 +76,18 @@ body {
 .text-switches-box {
     display: flex;
     justify-content: space-between;
-    margin: 0 2rem;
 }
 
 .texts {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
+    overflow: hidden;
+}
+
+.texts__box {
+    transition: all .4s;
+}
+
+.text {
+    opacity: 0;
 }
 
 .switch label {
@@ -46,47 +95,33 @@ body {
     width: 1rem;
     height: 1rem;
     cursor: pointer;
-    margin: 0 3px;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .8);
+    margin: 0 0.1rem;
+    box-shadow: 0 0 0.1rem 0 rgba(0, 0, 0, .8);
     border-radius: 50%;
-    border: 5px solid #acc7de;
+    border: 0.2rem solid #acc7de;
+    background-color: #acc7de;
     transition: .3s;
 }
 
 .switch label:hover {
-    background-color: #acc7de;
-    transition: 0.5s;
+    background-color: white;
+    border: 0.2rem solid white;
 }
 
-#btn1:checked~.switch label[for="btn1"] {
-    background-color: red;
+#btn1:checked~.text-switches-box>.switch label[for="btn1"] {
+    background-color: transparent;
 }
 
-#btn2:checked~.switch label[for="btn2"] {
-    background-color: red;
+#btn2:checked~.text-switches-box>.switch label[for="btn2"] {
+    background-color: transparent;
 }
 
-#btn3:checked~.switch label[for="btn3"] {
-    background-color: #acc7de;
+#btn3:checked~.text-switches-box>.switch label[for="btn3"] {
+    background-color: transparent;
 }
 
-#btn4:checked~.switch label[for="btn4"] {
-    background-color: #acc7de;
-}
-
-.slider-inner {
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    width: 100%;
-    transition: all 0.5s;
-}
-
-.slides img {
-    width: 100%;
-    flex-shrink: 0;
+#btn4:checked~.text-switches-box>.switch label[for="btn4"] {
+    background-color: transparent;
 }
 
 #btn1:checked~.slider-inner .slides {
@@ -103,4 +138,46 @@ body {
 
 #btn4:checked~.slider-inner .slides {
     transform: translateX(-300%);
+}
+
+#btn1:checked~.text-switches-box>.texts .texts__box {
+    transform: translate(0);
+}
+
+#btn2:checked~.text-switches-box>.texts .texts__box {
+    transform: translateY(-2rem);
+}
+
+#btn3:checked~.text-switches-box>.texts .texts__box {
+    transform: translateY(-4rem);
+}
+
+#btn4:checked~.text-switches-box>.texts .texts__box {
+    transform: translateY(-6rem);
+}
+
+#btn1:checked~.text-switches-box>.texts .texts__box .texts__item_1 {
+    opacity: 1;
+    animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+#btn2:checked~.text-switches-box>.texts .texts__box .texts__item_2 {
+    opacity: 1;
+    animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+#btn3:checked~.text-switches-box>.texts .texts__box .texts__item_3 {
+    opacity: 1;
+    animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+#btn4:checked~.text-switches-box>.texts .texts__box .texts__item_4 {
+    opacity: 1;
+    animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@media (max-width: 767px) {
+    .text-switches-box {
+        flex-direction: column-reverse;
+    }
 }

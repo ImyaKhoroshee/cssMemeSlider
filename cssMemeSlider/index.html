@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <header class="header">
+        <h1 class="header__title">CSS Meme Slider</h1>
+    </header>
     <main class="main">
         <div class="slider">
             <input type="radio" name="change" id="btn1" checked>
@@ -28,20 +31,22 @@
                     <img src="./img/slider_4.png" />
                 </div>
             </div>
-        </div>
-        <div class="text-switches-box">
-            <article class="texts">
-                <p class="texts__item">Ахахаха</p>
-                <p class="texts__item">С кем не бывает...</p>
-                <p class="texts__item">Слава Богу нет!</p>
-                <p class="texts__item">Ставь ⭐ в репозиторий, если у тебя также</p>
-            </article>
-            <nav class="switch">
-                <label class="btn1" for="btn1"></label>
-                <label for="btn2"></label>
-                <label for="btn3"></label>
-                <label for="btn4"></label>
-            </nav>
+            <div class="text-switches-box">
+                <article class="texts">
+                    <div class="texts__box">
+                        <p class="text texts__item_1 tracking-in-expand-fwd-top">Ахахаха</p>
+                        <p class="text texts__item_2 tracking-in-expand-fwd-top">С кем не бывает...</p>
+                        <p class="text texts__item_3 tracking-in-expand-fwd-top">Слава Богу нет!</p>
+                        <p class="text texts__item_4 tracking-in-expand-fwd-top">Улыбнись, если также</p>
+                    </div>
+                </article>
+                <nav class="switch">
+                    <label for="btn1"></label>
+                    <label for="btn2"></label>
+                    <label for="btn3"></label>
+                    <label for="btn4"></label>
+                </nav>
+            </div>
         </div>
     </main>
 </body>
