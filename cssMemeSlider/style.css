@@ -26,25 +26,21 @@
 body {
     font-family: 'Roboto Slab', serif;
     font-size: 1.5rem;
-    color: #acc7de;
-}
-
-.header {
-    background-color: rgb(40, 40, 40);
-    display: flex;
-    justify-content: center;
-    color: #acc7de;
-    font-size: large;
+    color: white;
 }
 
 .main {
     background-color: rgb(40, 40, 40);
     padding: 0.5rem;
+    border-radius: 2rem;
 }
 
 /* slider  */
 .slider {
-    margin: 1rem 2rem 4rem 2rem;
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .slider input[name="change"] {
@@ -53,9 +49,8 @@ body {
 
 .slider-inner {
     overflow: hidden;
-    border: 1rem solid #acc7de;
+    border: 0.5rem solid #acc7de;
     border-radius: 1rem;
-    margin-bottom: 2rem;
 }
 
 .slides {
@@ -76,6 +71,7 @@ body {
 .text-switches-box {
     display: flex;
     justify-content: space-between;
+
 }
 
 .texts {
@@ -176,8 +172,14 @@ body {
     animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
+.padding {
+    padding: 1rem;
+}
+
 @media (max-width: 767px) {
+
     .text-switches-box {
         flex-direction: column-reverse;
+        gap: 2rem;
     }
 }
